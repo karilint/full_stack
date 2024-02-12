@@ -11,7 +11,7 @@ const App = () => {
     'enter a new note...'
   ) 
   const [showAll, setShowAll] = useState(true)
-  const [feedbackMessage, setFeedbackMessage] = useState('some error happened...');
+  const [feedbackMessage, setFeedbackMessage] = useState('');
 
   console.log(notes)
 
