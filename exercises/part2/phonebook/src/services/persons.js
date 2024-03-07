@@ -19,6 +19,7 @@ const update = (id, newObject) => {
   return request
   .then(response => response.data)
   .catch(error => {
+    console.log(error.message)
       if (error.response && error.response.status === 404) {
           throw new Error('PersonNotFound')
       } else {

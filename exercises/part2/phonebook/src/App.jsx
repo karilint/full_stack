@@ -65,9 +65,12 @@ const App = () => {
                 setFeedbackType('error');
             } else {
                 // Handle other types of errors
-                setFeedbackMessage('An unexpected error occurred');
+//                setFeedbackMessage(error.message);
+                setFeedbackMessage(error.response.data.error); // Error message
                 setFeedbackType('error');
-            }
+                setTimeout(() => setFeedbackMessage(''), 3000); // Clear the message after 3 seconds
+                console.error('Error updating the person:', error.response.data.error);
+              }
         });
       }
     } else {
@@ -79,10 +82,10 @@ const App = () => {
           setNewNumber('');
         })
         .catch(error => {
-          setFeedbackMessage('Error adding the person'); // Error message
+          setFeedbackMessage(error.response.data.error); // Error message
           setFeedbackType("error");
           setTimeout(() => setFeedbackMessage(''), 3000); // Clear the message after 3 seconds
-          console.error('Error adding the note:', error);
+          console.error('Error adding the person:', error.response.data.error);
         });
 
         // Success message after add

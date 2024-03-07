@@ -2,6 +2,18 @@ POST http://localhost:3001/api/notes/
 Content-Type: application/json
 
 {
-    "content": "KLI test code",
+    "content": "KLI",
     "important": true
+}
+
+###
+GET  http://localhost:3001/api/notes/
+
+###
+PUT http://localhost:3001/api/notes/65ccd02b23e813f43434755b
+Content-Type: application/json
+
+{
+    "content": "KLI",
+    "important": false
 }
